@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, SafeAreaView } from "react-native";
+import { View, Text, FlatList} from "react-native";
 import { Provider as PaperProvider, MD3DarkTheme, MD3LightTheme } from "react-native-paper";
 import ThemeToggle from "./components/ThemeToggle";
 import { globalStyles } from "./styles/globalstyles";
@@ -25,7 +25,7 @@ const App: React.FC = () => {
   return (
     <PaperProvider theme={isDarkMode ? MD3DarkTheme : MD3LightTheme}>
         <View style={[globalStyles.container, { 
-          backgroundColor: isDarkMode ? "#121212" : "#fff", 
+          backgroundColor, 
           justifyContent: "space-between", 
           paddingBottom: 20 }]}>
           
@@ -46,6 +46,10 @@ const App: React.FC = () => {
               <Text key={index} style={[globalStyles.text, textStyles]}>• {skill}</Text>
             ))}
 
+            {/*contacts*/}
+            <Text style={[globalStyles.sectionTitle, textStyles]}>Contact me:</Text>
+            <Text style={[globalStyles.text, textStyles]}>joshgarethyao@gmail.com</Text>
+
 
             {/* projects */}
             <Text style={[globalStyles.sectionTitle, textStyles]}>Projects</Text>
@@ -53,17 +57,13 @@ const App: React.FC = () => {
               data={projects}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => (
-                <View style={[globalStyles.projectItem, { 
-                  backgroundColor: isDarkMode ? "#333333" : "#f5f5f5" 
-                }]}>
+                <View style={[globalStyles.projectItem, { backgroundColor:projectBgColor }]}>
+
                   <Text style={[globalStyles.projectTitle, textStyles]}>{item.name}</Text>
                   <Text style={[globalStyles.projectDescription, textStyles]}>{item.description}</Text>
                 </View>
               )}
             />
-            
-            <Text style={[globalStyles.sectionTitle, textStyles]}>Contact:</Text>
-            <Text style={[globalStyles.text, textStyles]}>joshgarethyao@gmail.com</Text>
           </View>
 
         </View>
