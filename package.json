@@ -18,7 +18,8 @@
     "react-native-paper": "^5.13.1",
     "react-dom": "18.3.1",
     "react-native-web": "~0.19.13",
-    "@expo/metro-runtime": "~4.0.1"
+    "@expo/metro-runtime": "~4.0.1",
+    "expo-image": "~2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
